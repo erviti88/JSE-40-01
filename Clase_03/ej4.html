@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="numero1" value="">
+    +
+    <input type="text" id="numero2" value="">
+    <label id="resultado">_____</label>
+    <button onclick="f_calcular(numero1.value, numero2.value)">Calcular</button>
+</body>
+</html>
+
+<script>
+
+    var dom_resultado = document.getElementById("resultado");
+
+    var f_calcular = function(p_numero1, p_numero2){
+        var resultado = parseFloat(p_numero1) + parseFloat(p_numero2);
+        dom_resultado.innerText = resultado;
+    };
+
+</script>

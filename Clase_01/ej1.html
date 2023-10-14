@@ -1,0 +1,54 @@
+<!-- VERSION HTML5 -->
+<!DOCTYPE html>
+<!-- LENGUAGE -->
+<html lang="en">
+    <head>
+        <!-- CODIFICACION DE TEXTO -->
+        <meta charset="UTF-8">
+        <!-- AJUSTE DE PANTALLA DEL NAVEGADOR -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- TÍTULO DE LA PÁGINA -->
+        <title>Ejemplo 1</title>
+        <!-- FAVICON DE LA PÁGINA -->
+        <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <h1>Bienvenid@s a mi primera web</h1>
+    </body>
+</html>
+
+<script>
+    
+    // Declaramos las variables
+    var nombre; // Tipo Undefined
+    var puntos;
+    var aprobado;
+    var mensaje;
+    var notaMedia;
+
+    // Inicializamos las variables
+    nombre = "María"; // Tipo String
+    puntos = 100; // Tipo Number
+    aprobado = true; // Tipo Boolean
+    notaMedia = 9.25; // Tipo Number
+
+    // Concatenamos
+    // Maria ha obtenido 100 puntos y tiene una nota media de 9.
+    // ------    ------  ---------
+    // nombre    puntos  notaMedia
+
+    // mensaje = nombre + " ha obtenido " + puntos + " puntos y tiene una nota media de " + notaMedia;
+    // mensaje = nombre.concat(" ha obtenido ", puntos, " puntos y tiene una nota media de ", notaMedia);
+    
+    // Interpolamos
+
+    mensaje = `${nombre} ha obtenido ${puntos} puntos y tiene una nota media de ${notaMedia}.`;
+
+    /*
+    mensaje = `${nombre} ha obtenido ${puntos} puntos` 
+        + `y tiene una nota media de ${notaMedia}.`; 
+    */
+
+    alert(mensaje);
+
+</script>

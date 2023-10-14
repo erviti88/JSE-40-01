@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 2</title>
+</head>
+<body>
+    <input type="number" id="numero" value="">
+    <button onclick="f_mostrar()">Mostrar números</button>
+</body>
+</html>
+
+<script>
+
+    let dom_numero = document.getElementById("numero");
+
+    let f_mostrar = function() {
+        var numero = dom_numero.value;
+        var mensaje = `El número introducido es ${numero}`
+        alert(mensaje);
+    };
+    
+</script>
