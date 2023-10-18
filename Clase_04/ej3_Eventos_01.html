@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos 01</title>
+</head>
+<body>
+
+    <!-- <button onclick="f_sumar()">Sumar</button> -->
+    <button id="btnSumar">Sumar</button>
+    
+</body>
+</html>
+
+<script>
+
+    var dom_btnSumar = document.getElementById("btnSumar");
+
+    dom_btnSumar.onclick = function () {
+        var numero1;
+        var numero2;
+        var resultado;
+
+        numero1 = parseInt(prompt("Introduzca un número"));
+        numero2 = parseInt(prompt("Introduzca otro número"));
+
+        if (isNaN(numero1) || isNaN(numero2)) {
+            alert("Solo números 😉");
+        } else {
+            resultado = numero1 + numero2;
+            alert(resultado);
+        }
+    }
+
+</script>

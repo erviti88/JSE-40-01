@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos 02</title>
+</head>
+<body>
+    <!-- MODELO DE COLOR RGB, NOTACIÓN HEXADECIMAL -->
+    <input id="selectorColor" type="color" value="#ff0000">
+</body>
+</html>
+
+<script>
+
+    var dom_selectorColor = document.getElementById("selectorColor");
+
+    dom_selectorColor.onchange = function(p_evento){
+        /* alert("Ha seleccionado un color"); */
+        /* var mensaje = "Ha seleccionado el color " + dom_selectorColor.value; */
+        /* var mensaje = "Ha seleccionado el color " + this.value; */
+
+        var elemento_selectorColor = p_evento.target;
+        var mensaje = "Ha seleccionado el color " + elemento_selectorColor.value;
+    }
+
+</script>
