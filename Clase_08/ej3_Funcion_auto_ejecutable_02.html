@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Función auto ejecutable 02</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    /* 
+    f_saludar("Hola");
+
+    // Esta es una función declarativa. Se define usando la palabra clave "function" seguida del nombre de la función.
+    function f_saludar(p_mensaje) {
+        // Muestra un alerta con el mensaje proporcionado.
+        alert(p_mensaje);
+    }
+    */
+
+    /* 
+    (function f_saludar(p_mensaje) {
+        // Muestra un alerta con el mensaje proporcionado.
+        alert(p_mensaje);
+    })("Hola");
+    */
+
+    // Esta es una función expresiva autoinvocada anónima.
+    (function(p_mensaje) {
+        // Muestra un alerta con el mensaje proporcionado.
+        alert(p_mensaje);
+    })("Hola");
+
+</script>

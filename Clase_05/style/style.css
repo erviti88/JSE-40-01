@@ -1,0 +1,41 @@
+body {
+    text-align: center; 
+}
+
+#main-container {
+    display: inline-block; 
+    padding: 1em; 
+}
+        
+/* .blue-border {
+    border: 2px solid blue;
+}
+        
+.brown-border {
+    border: 2px solid brown;
+}
+
+.red-border {
+    border: 2px dotted red;
+} */
+
+.green-border {
+    border: 2px solid green;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.text-center {
+    text-align: center;
+}
+        
+button {
+    width: 100%;
+    padding: 0.5em 0.75em;
+}
+
+.mb-1 { 
+    margin-bottom: 1em;
+}

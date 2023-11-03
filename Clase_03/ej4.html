@@ -16,10 +16,15 @@
 
 <script>
 
+    // Obtener una referencia al elemento del DOM con ID "resultado"
     var dom_resultado = document.getElementById("resultado");
 
-    var f_calcular = function(p_numero1, p_numero2){
+    // Definición de la función f_calcular que toma dos parámetros y realiza su suma
+    var f_calcular = function(p_numero1, p_numero2) {
+        // Convertir los parámetros de entrada a números decimales y sumarlos
         var resultado = parseFloat(p_numero1) + parseFloat(p_numero2);
+
+        // Mostrar el resultado en el elemento con ID "resultado"
         dom_resultado.innerText = resultado;
     };
 

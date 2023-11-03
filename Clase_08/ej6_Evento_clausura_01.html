@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento clausura 01</title>
+</head>
+<body>
+
+    <input type="text" id="mensaje" value="">
+    <button id="btnSaludar">Saludar</button>
+    
+</body>
+</html>
+
+<script>
+
+    // Obteniendo referencias a los elementos del DOM.
+    var dom_mensaje = document.getElementById("mensaje"); // Referencia al campo de entrada donde el usuario puede escribir un mensaje.
+    var dom_btnSaludar = document.getElementById("btnSaludar"); // Referencia al botón que activará la acción de mostrar el alerta.
+
+    // Primera versión comentada: Define una función que recibe el elemento DOM del mensaje como argumento.
+    // Esta función devuelve otra función que se ejecuta cuando se hace clic en el botón.
+    /* var f_saludar = function(p_dom_mensaje) {
+        return function(p_evento) {
+            var mensaje = p_dom_mensaje.value; // Obtiene el valor del campo de mensaje.
+            alert(mensaje); // Muestra el mensaje en un alerta.
+        }
+    } */
+
+    // Segunda versión: Similar a la primera pero utilizando funciones de flecha.
+    var f_saludar = (p_dom_mensaje) => {
+        return (p_evento) => {
+            var mensaje = p_dom_mensaje.value; // Obtiene el valor del campo de mensaje.
+            alert(mensaje); // Muestra el mensaje en un alerta.
+        }
+    }
+
+    // Agregando un escucha de evento al botón. Cuando se haga clic en el botón, se ejecutará la función generada por f_saludar con el parámetro dom_mensaje.
+    dom_btnSaludar.addEventListener("click", f_saludar(dom_mensaje));
+
+</script>

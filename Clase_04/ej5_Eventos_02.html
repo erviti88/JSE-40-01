@@ -13,15 +13,23 @@
 
 <script>
 
+    // Obtención del elemento DOM con ID "selectorColor"
     var dom_selectorColor = document.getElementById("selectorColor");
 
-    dom_selectorColor.onchange = function(p_evento){
-        /* alert("Ha seleccionado un color"); */
-        /* var mensaje = "Ha seleccionado el color " + dom_selectorColor.value; */
-        /* var mensaje = "Ha seleccionado el color " + this.value; */
+    // Asignación de un event listener al cambio del valor del selector de colores
+    dom_selectorColor.onchange = function(p_evento) {
+        // El código comentado a continuación muestra diferentes formas de acceder al valor seleccionado
+        // alert("Ha seleccionado un color");
+        // var mensaje = "Ha seleccionado el color " + dom_selectorColor.value;
+        // var mensaje = "Ha seleccionado el color " + this.value;
 
+        // Se obtiene el elemento que disparó el evento a partir del objeto evento
         var elemento_selectorColor = p_evento.target;
+
+         // Construcción del mensaje indicando el color seleccionado
         var mensaje = "Ha seleccionado el color " + elemento_selectorColor.value;
-    }
+    
+        // (El mensaje se encuentra definido pero no se muestra ni se utiliza en ninguna parte del código)
+    };
 
 </script>

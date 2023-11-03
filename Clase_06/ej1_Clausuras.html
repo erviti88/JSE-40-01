@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clausuras</title>
+</head>
+<body>
+    <input type="text" id="numero1">
+    <input type="text" id="numero1">
+    <button id="btnSumar">Sumar</button>
+</body>
+</html>
+
+<script>
+
+    // Obtención de los elementos DOM para los números y el botón de suma
+    var dom_numero1 = document.getElementById("numero1");
+    var dom_numero2 = document.getElementById("numero2");
+    var dom_btnSumar = document.getElementById("btnSumar");
+
+    // Asignación del manejador de eventos al botón. Aquí hay un error: 
+    // se debería usar una función anónima o una función de flecha para llamar a f_sumar 
+    // con los argumentos deseados cuando se haga clic en el botón.
+    dom_btnSumar.onclick = function() {
+        f_sumar(dom_numero1, dom_numero2);
+    };
+
+    dom_btnSumar.onclick = f_sumar(dom_numero1, dom_numero2);
+
+    /* function f_sumar (p_dom_numero1, p_dom_numero2) {
+        
+        var numero1 = +p_dom_numero1.value;
+        var numero2 = +p_dom_numero2.value;
+
+        var numero1 = parseFloat(p_dom_numero1.value);
+        var numero2 = parseFloat(p_dom_numero2.value);
+
+        var resultado = numero1 + numero2;
+
+        alert(resultado);
+    }; */
+
+    // Definición de la función f_sumar que toma dos elementos DOM como argumentos
+    function f_sumar(p_dom_numero1, p_dom_numero2) {
+    
+        // Conversión del valor del primer elemento a número usando el operador unario +
+        var numero1 = +p_dom_numero1.value;
+    
+        // Conversión del valor del segundo elemento a número usando el operador unario +
+        var numero2 = +p_dom_numero2.value;
+
+        // Las siguientes dos líneas son redundantes y sobrescriben las variables numero1 y numero2.
+        // Conversión del valor del primer elemento a número decimal
+        var numero1 = parseFloat(p_dom_numero1.value);
+    
+        // Conversión del valor del segundo elemento a número decimal
+        var numero2 = parseFloat(p_dom_numero2.value);
+
+        // Suma de los dos números
+        var resultado = numero1 + numero2;
+
+        // Muestra el resultado en una ventana de alerta
+        alert(resultado);
+    };
+
+</script>

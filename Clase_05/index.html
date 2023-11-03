@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de dados</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <!-- Contenedor principal del juego -->
+    <div id="main-container" class="green-border inline">
+
+        <!-- Contenedor de los dados y botones de lanzamiento -->
+        <div id="container" class="blue-border text-center">
+
+            <!-- Contenedor del dado y botón del Jugador 1 -->
+            <div id="dice1-container" class="brown-border inline">
+                <!-- Botón para lanzar el dado del Jugador 1 -->
+                <div class="red-border">
+                    <button id="btnLanzarJugador1" disabled>Lanzar Jugador 1</button>
+                </div>
+                <!-- Imagen del dado del Jugador 1 -->
+                <div class="red-border">
+                    <img id="imgDado1" src="">
+                </div>
+            </div>
+
+            <!-- Contenedor del dado y botón del Jugador 2 -->
+            <div id="dice2-container" class="brown-border inline">
+                <!-- Botón para lanzar el dado del Jugador 2 -->
+                <div class="red-border">
+                    <button id="btnLanzarJugador2" disabled>Lanzar Jugador 2</button>
+                </div>
+                <!-- Imagen del dado del Jugador 2 -->
+                <div class="red-border">
+                    <img id="imgDado2" src="">
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- Contenedor de los botones para iniciar y comprobar ganador -->
+        <div class="blue-border text-center">
+            <!-- Botón para comprobar quién es el ganador -->
+            <div class="brown-border mb-1">
+                <button id="btnComprobarGanador" disabled>Comprobar Ganador</button>
+            </div>
+            <!-- Botón para iniciar la partida -->
+            <div class="brown-border">
+                <button id="btnIniciarPartida">Iniciar Partida</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+<!-- Script externo que contiene la lógica del juego -->
+<script src="./js/app.js"></script>

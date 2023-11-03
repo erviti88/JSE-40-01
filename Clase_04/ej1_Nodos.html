@@ -18,21 +18,24 @@
 
 <script>
 
-    /* ARRAY QUE CONTIENE ETIQUETAS HTML DE TIPO LI */
+    // Obtener una lista de elementos del DOM que tienen la clase 'number'
     var dom_lista = document.getElementsByClassName('number');
 
+     // Definición de la función f_formato que aplica formato a los números basado en su valor
     var f_formato = function() {
-        var dom_li;
-        var valor;
+        var dom_li; // Variable para almacenar cada elemento individual de la lista
+        var valor; // Variable para almacenar el valor numérico de cada elemento
 
+        // Iterar sobre todos los elementos de la lista
         for (let i = 0; i < dom_lista.length; i++) {
-            dom_li = dom_lista[i];
-            valor = dom_li.innerText;
+            dom_li = dom_lista[i]; // Obtener el elemento actual de la lista
+            valor = dom_li.innerText; // Convertir el texto del elemento a número
 
+            // Aplicar formato basado en el valor numérico
             if (valor < 0) {
-                dom_li.style.color = "red";
+                dom_li.style.color = "red"; // Si el número es negativo, cambiar el color a rojo
             } else {
-                dom_li.style.color = "blue";
+                dom_li.style.color = "blue"; // Si el número es positivo o cero, cambiar el color a azul
             }
         }
     };

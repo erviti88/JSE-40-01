@@ -21,11 +21,19 @@
     //      9
     //      10
 
+    // Inicialización y definición del bucle que mostrará números del 1 al 9
+    // Se utiliza una variable 'numero' que comienza en 1 y se incrementa en cada iteración hasta que es menor que 10
     for (let numero = 1; numero < 10; numero++) {
+        // Se imprime el valor actual de 'numero' en la consola
         console.log(numero)
     }
 
+    // Se imprime un mensaje en la consola una vez que se ha completado el bucle
     console.log("Salimos del bucle");
+
+    // Intentamos imprimir el valor de 'numero' fuera del bucle
+    // Sin embargo, como 'numero' fue declarada con 'let' dentro del bucle, no es accesible fuera de él
+    // Esto provocará un error: "Uncaught ReferenceError: numero is not defined"
     console.log(numero);
     
 </script>

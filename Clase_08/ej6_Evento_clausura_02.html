@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento clausura 02</title>
+</head>
+<body>
+
+    <input type="text" id="mensaje" value="">
+    <button id="btnSaludar">Saludar</button>
+    
+</body>
+</html>
+
+<script>
+
+    // Obteniendo referencias a los elementos del DOM.
+    var dom_mensaje = document.getElementById("mensaje"); // Campo de entrada donde el usuario puede escribir un mensaje.
+    var dom_btnSaludar = document.getElementById("btnSaludar"); // Botón para activar la acción de mostrar un alerta con el mensaje.
+
+    // Primera versión: Utiliza una función autoinvocada que recibe el elemento DOM del mensaje como argumento.
+    // Esta función devuelve otra función que se ejecuta cuando se hace clic en el botón.
+    /* dom_btnSaludar.addEventListener("click", function(p_dom_mensaje) {
+        
+        return function(p_evento) {
+            var mensaje = p_dom_mensaje.value; // Obtiene el valor del campo de mensaje.
+            alert(mensaje);  // Muestra el mensaje en un alerta.
+        }
+
+    }(dom_mensaje)); */
+
+    // Segunda versión: Similar a la primera pero utilizando funciones de flecha.
+    /* dom_btnSaludar.addEventListener("click", ((p_dom_mensaje) => {
+        
+        return (p_evento) => {
+            var mensaje = p_dom_mensaje.value; // Obtiene el valor del campo de mensaje.
+            alert(mensaje); // Muestra el mensaje en un alerta.
+        }
+
+    })(dom_mensaje)); */
+
+    // Tercera versión: Una versión más concisa de la segunda, utilizando funciones de flecha y reduciendo la cantidad de código.
+    /* dom_btnSaludar.addEventListener("click", ((p_dom_mensaje) => { return () => alert(p_dom_mensaje.value); })(dom_mensaje)); */
+    
+    // Cuarta versión: La más simplificada, directamente agrega un escucha de evento al botón y muestra el valor del campo de mensaje en un alerta.
+    dom_btnSaludar.addEventListener("click", () => alert(dom_mensaje.value));
+
+</script>

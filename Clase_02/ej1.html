@@ -13,11 +13,19 @@
 
 <script>
 
+    // Obtener referencia al elemento input con ID "numero"
     let dom_numero = document.getElementById("numero");
 
+    // Función para mostrar el número introducido por el usuario
     let f_mostrar = function() {
+
+        // Capturar el valor ingresado en el campo de entrada
         var numero = dom_numero.value;
+
+        // Construir el mensaje a mostrar
         var mensaje = `El número introducido es ${numero}`
+
+        // Mostrar el mensaje en un alerta
         alert(mensaje);
     };
     

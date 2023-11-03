@@ -18,15 +18,22 @@
 
 <script>
 
+    // Obtener referencias a los elementos del DOM por su ID
     var dom_numero1 = document.getElementById("numero1");
     var dom_numero2 = document.getElementById("numero2");
     var dom_resultado = document.getElementById("resultado");
 
-    var f_calcular = function(){
+    // Función que realiza la suma de dos números introducidos por el usuario
+    var f_calcular = function() {
+        // Convertir los valores de los campos de entrada a números decimales
+        // Se reemplaza la coma por punto para asegurar una correcta conversión
         var numero1 = parseFloat(dom_numero1.value.replace(",", "."));
         var numero2 = parseFloat(dom_numero2.value.replace(",", "."));
 
+        // Sumar los dos números
         var resultado = numero1 + numero2;
+
+        // Mostrar el resultado en el elemento con ID "resultado"
         dom_resultado.innerText = resultado;
     };
 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach función anónima</title>
+</head>
+<body>
+
+    <input type="number" id="edad" placeholder="Intro. su edad">
+    <button id="btnModificarEdad">Modificar edad</button>
+    
+</body>
+</html>
+
+<script>
+
+    // Define un array de objetos, cada uno representando un alumno con nombre, apellido y edad.
+    let alumnos = [
+        { nombre: "María", apellido: "García", edad: 40 },
+        { nombre: "Susana", apellido: "González", edad: 40 },
+        { nombre: "Pedro", apellido: "López", edad: 40 }
+    ];
+
+    // Obtiene una referencia al elemento del DOM con id "edad", probablemente un campo de entrada de texto.
+    let dom_edad = document.getElementById("edad");
+
+    // Obtiene una referencia al botón con id "btnModificarEdad".
+    let dom_btnModificarEdad= document.getElementById("btnModificarEdad");
+
+    // Este bloque de código comentado define una función que incrementa la edad de los alumnos y muestra su información en la consola.
+    /* var f_mostrarAlumnos = function(p_valor, p_posicion, p_array) {
+        var texto = "En la posición " + p_posicion + " hay: Nombre Alumno: " + p_valor.nombre + "\n"
+                    + "Apellido Alumno: " + p_valor.apellido + "\n";
+
+        console.log(texto);
+        
+        p_valor.edad++;
+    }; */
+
+    // Este bloque de código comentado recorre el array de alumnos, incrementa su edad y muestra su información en la consola.
+    /* alumnos.forEach(function(p_valor, p_posicion, p_array) {
+        var texto = "En la posición " + p_posicion + " hay: Nombre Alumno: " + p_valor.nombre + "\n"
+                    + "Apellido Alumno: " + p_valor.apellido + "\n\n";
+
+        console.log(texto);
+        
+        p_valor.edad++;
+    }); */
+
+    // Aquí se define el evento onclick del botón que modificará la edad de todos los alumnos.
+    dom_btnModificarEdad.onclick = function() {
+        // Recorre el array de alumnos utilizando la función forEach.
+        alumnos.forEach((p_valor, p_posicion, p_array) => {
+            // Asigna a la propiedad edad de cada alumno el valor obtenido del elemento DOM "dom_edad".
+            p_valor.edad = this.dom_edad.value;
+        }, dom_edad);
+    };
+
+</script>

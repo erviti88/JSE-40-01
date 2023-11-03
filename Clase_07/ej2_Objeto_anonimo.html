@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Anónimo</title>
+</head>
+
+<body>
+    <p id="alumnos"></p>
+</body>
+
+</html>
+
+<script>
+
+    // Definición del objeto alumno1 con sus propiedades y métodos
+    var alumno1 = {
+        nombre: "María",
+        matricula: "111",
+        curso: "JavaScript",
+        
+        // Método que devuelve los detalles del alumno en formato HTML
+        f_detalle: function () {
+            var mensaje = "NOMB: " + this.nombre + "<br>"
+                + "MATRÍCULA: " + this.matricula + "<br>"
+                + "CURSO: " + this.curso + "<hr>";
+            return mensaje;
+        }
+    };
+
+    // Definición del objeto alumno2 con sus propiedades y métodos
+    var alumno2 = {
+        nombre: "Pedro",
+        matricula: "222",
+        curso: "JavaScript Avanzado",
+        f_detalle: function () {
+            var mensaje = "NOMB: " + this.nombre + "<br>"
+                + "MATRÍCULA: " + this.matricula + "<br>"
+                + "CURSO: " + this.curso + "<hr>";
+            return mensaje;
+        }
+    };
+
+    // Creación de un array que contiene a ambos objetos de alumnos
+    var arrayAlumnos = [alumno1, alumno2];
+    //                    0        1
+    //                 i  |
+    // Obtención del elemento del DOM con ID "alumnos"
+    var dom_alumnos = document.getElementById("alumnos");
+
+    // Bucle que recorre cada objeto de alumno en el array
+    for (let i = 0; i < arrayAlumnos.length; i++) {
+        // Obteniendo el objeto alumno actual
+        var alumno = arrayAlumnos[i];
+        // Agregando los detalles del alumno al elemento dom_alumnos
+        dom_alumnos.innerHTML += alumno.f_detalle();
+    }
+    
+</script>

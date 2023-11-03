@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener</title>
+</head>
+<body>
+
+    <button id="btnSaludar">Saludar</button>
+    
+</body>
+</html>
+
+<script>
+
+    // Obteniendo referencia al elemento del botón con el id "btnSaludar" en el DOM.
+    var dom_btnSaludar = document.getElementById("btnSaludar");
+
+    // Primer método comentado: Asociar una función al evento "onclick" del botón.
+    /* dom_btnSaludar.onclick = function() {
+
+    }; */
+
+    // Segundo método comentado: Definir una función llamada "f_saludar" que muestra una alerta con el mensaje "Hola".
+    /* var f_saludar = function(p_evento) {
+        alert("Hola");
+    }; */
+
+    // Tercer método comentado: Asociar la función "f_saludar" al evento "click" del botón usando addEventListener.
+    /* dom_btnSaludar.addEventListener("click", f_saludar); */
+
+    // Cuarto método comentado: Asociar una función anónima al evento "click" del botón que muestra una alerta con el mensaje "Hola".
+    /* dom_btnSaludar.addEventListener("click", function(p_evento){
+        alert("Hola");
+    }); */
+
+    // Quinto método (activado): Utilizando una función de flecha para asociar la acción al botón.
+    dom_btnSaludar.addEventListener("click", (p_evento) => {
+        alert("Hola");
+    });
+
+</script>

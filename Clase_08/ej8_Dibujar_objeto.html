@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujar objeto</title>
+
+    <style>
+
+        table {
+            border: 3px solid blue;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid green;
+            padding: 1em;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <button id="btnCargar">Cargar formulario</button>
+    <br><br>
+
+    <div id="listadoProductos"></div>
+    
+</body>
+</html>
+
+<script>
+    
+    var productos = [
+        { nombre: "Ratón", stock: "10", precio: 15.99 },
+        { nombre: "Teclado", stock: "11", precio: 11 },
+    ];
+
+    var dom_btnCargar = document.getElementById("btnCargar");
+    var dom_listadoProductos = document.getElementById("listadoProductos");
+
+    dom_btnCargar.onclick = (p_evento) => {
+        var html = `<table>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Stock</th>
+                            <th>Precio</th>
+                        </tr>`;
+
+        for (let i = 0; i < productos.length; i++) {
+            const element = productos[i];
+
+            /* html += `<tr>
+                            <td>${element.nombre}</td>
+                            <td>${element.stock}</td>
+                            <td>${element.precio}</td>
+                        </tr>`; */
+
+            html += "<tr>"
+                +       "<td>" + element.nombre + "</td>"
+                +       "<td>" + element.stock + "</td>"
+                +       "<td>" + element.precio + "</td>"
+                +   "<tr>";
+        }
+
+        html += `</table>`;
+
+        dom_listadoProductos.innerHTML = html;
+    };
+
+</script>

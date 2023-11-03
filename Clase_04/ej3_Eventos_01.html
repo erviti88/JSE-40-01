@@ -15,20 +15,31 @@
 
 <script>
 
+    // Inicialización de la variable 'dom_btnSumar' para obtener el botón con el ID "btnSumar"
     var dom_btnSumar = document.getElementById("btnSumar");
 
-    dom_btnSumar.onclick = function () {
+    // Asignación del evento 'onclick' al botón 'dom_btnSumar'
+    dom_btnSumar.onclick = function() {
+        // Declaración de variables que almacenarán los números introducidos y el resultado de su suma
         var numero1;
         var numero2;
         var resultado;
 
+        // Solicitar al usuario que introduzca un número y almacenar el valor en 'numero1' como entero
         numero1 = parseInt(prompt("Introduzca un número"));
+    
+        // Solicitar al usuario que introduzca otro número y almacenar el valor en 'numero2' como entero
         numero2 = parseInt(prompt("Introduzca otro número"));
 
+        // Verificación de si los valores introducidos no son números (NaN: Not a Number)
         if (isNaN(numero1) || isNaN(numero2)) {
+            // Mostrar un mensaje de alerta informando al usuario que solo se aceptan números
             alert("Solo números 😉");
         } else {
+            // Si ambos valores son números, sumar 'numero1' y 'numero2' y almacenar el resultado en 'resultado'
             resultado = numero1 + numero2;
+        
+            // Mostrar el resultado en una ventana emergente
             alert(resultado);
         }
     }

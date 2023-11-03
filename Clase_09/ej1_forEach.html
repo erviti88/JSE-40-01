@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    // Define un array de objetos 'alumnos', cada uno con propiedades 'nombre', 'apellido' y 'edad'.
+    let alumnos = [
+        { nombre: "María", apellido: "García", edad: 40 },
+        { nombre: "Susana", apellido: "González", edad: 40 },
+        { nombre: "Pedro", apellido: "López", edad: 40 }
+    ];
+
+    // Declara una función 'f_mostrarAlumnos' que toma un elemento del array (alumno),
+    // su posición y el array completo como argumentos.
+    var f_mostrarAlumnos = function(p_valor, p_posicion, p_array) {
+        // Construye un texto que incluye la posición y los datos del alumno (nombre y apellido).
+        var texto = "En la posición " + p_posicion + " hay: Nombre Alumno: " + p_valor.nombre + "\n"
+                    + "Apellido Alumno: " + p_valor.apellido + "\n";
+
+        // Imprime el texto en la consola.          
+        console.log(texto);
+        
+        // Incrementa la edad del alumno actual en 1.
+        p_valor.edad++;
+    };
+
+    // Ejecuta la función 'forEach' en el array 'alumnos', aplicando la función 'f_mostrarAlumnos'
+    // a cada elemento del array, lo que resulta en la impresión de sus datos y el incremento de su edad.
+    alumnos.forEach(f_mostrarAlumnos);
+
+    // Muestra una alerta con la edad actualizada del primer alumno ('María'), que ahora es 41.
+    alert(alumnos[0].edad);
+
+</script>

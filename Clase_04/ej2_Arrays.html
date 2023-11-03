@@ -12,18 +12,26 @@
 
 <script>
 
-    //       listadoNotas
+    // Definición de la estructura del arreglo 'listadoNotas'
+    //      listadoNotas
     //      ------------------
     //      | 10 | 9 | 7 | 5 |     4 notas
     //      ------------------
-    //         0   1   2   3       4
-    //   i  |------------------>
+    //         0   1   2   3       Índices
+    //   i  |------------------>  'i' es el índice que recorre el arreglo
 
+    // Inicialización del arreglo 'listadoNotas' con 4 notas
     var listadoNotas = [10, 9, 7, 5];
+
+    // Variable 'nota' que almacenará cada nota individual durante el bucle
     var nota;
 
+    // Bucle que recorre cada elemento del arreglo 'listadoNotas'
     for (let i = 0; i < 4; i++) {
+        // Obtener la nota actual del arreglo usando el índice 'i'
         nota = listadoNotas[i];
+    
+        // Mostrar la nota actual en una ventana emergente
         alert(nota);
     }
 

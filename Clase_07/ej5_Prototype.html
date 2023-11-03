@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    // Se definen tres variables: dos números y una variable para el resultado
+    var n1 = 963.12345;
+    var n2 = 441.78915154874;
+    var r;
+    
+    // Se extiende el prototipo de Number con un nuevo método llamado "redondear"
+    Number.prototype.redondear = function(p_decimales){
+        var resultado;
+
+        // Se utiliza el método toFixed() para redondear el número a un número específico de decimales
+        // 'this' se refiere al número al que se está llamando el método
+        resultado = this.toFixed(p_decimales);
+
+        // Se devuelve el número redondeado
+        return resultado;
+    }
+
+    // Se utiliza el nuevo método 'redondear' en el número n1 para redondear a 3 decimales
+    r = n1.redondear(3);
+
+    // Se muestra el resultado en una ventana de alerta
+    alert(r);
+
+</script>

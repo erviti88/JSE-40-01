@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujar formulario</title>
+</head>
+<body>
+
+    <input type="number" id="cantidad" placeholder="Introduzca un número de productos">
+    <button id="btnDibujar">Dibujar formulario</button>
+
+    <br><br>
+
+    <div id="listadoProductos"></div>
+
+</body>
+</html>
+
+<script>
+
+    // Obteniendo referencias a los elementos del DOM.
+    var dom_btnDibujar = document.getElementById("btnDibujar"); // Botón para activar la acción de dibujar.
+    var dom_cantidad = document.getElementById("cantidad"); // Campo de entrada para ingresar la cantidad de productos.
+    var dom_listadoProductos = document.getElementById("listadoProductos"); // Contenedor donde se dibujarán los campos de los productos.
+
+    // Agregar un escucha de evento al botón para ejecutar una función cuando se haga clic en él.
+    dom_btnDibujar.addEventListener("click", (p_evento) => {
+        
+        // Obteniendo el valor de la cantidad de productos que el usuario quiere ingresar.
+        var cantidad = dom_cantidad.value;
+        // Inicializando una variable que contendrá el HTML a insertar.
+        var html = "";
+
+        // Bucle que recorre de 0 hasta la cantidad especificada.
+        for (let i = 0; i < cantidad; i++) {
+            // Para cada iteración, se añade al HTML una serie de campos de entrada para el producto, stock y precio.
+            html += `
+            <input type="text" placeholder="Producto">
+            <input type="number" placeholder="Stock">
+            <input type="number" placeholder="Precio">
+            <hr>
+            `
+        }
+
+        // Una vez que se ha generado todo el HTML necesario, se inserta en el contenedor dom_listadoProductos.
+        dom_listadoProductos.innerHTML = html;
+    });
+
+</script>

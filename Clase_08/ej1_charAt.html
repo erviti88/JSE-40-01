@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>charAt</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    // Definición de una constante "saludo" que es un string de 6 caracteres.
+    // ----------------------------------------------
+    const saludo = "Buenas";
+    //              012345
+    //          i | ------>
+    //          i < saludo.length - 1
+
+    // Usando un bucle for para iterar sobre cada caracter del string
+    for (let i = 0; i < saludo.length; i++) {
+        // Mostrando el caracter actual en la consola
+        console.log(saludo[i]);
+        // Alternativa: usando el método charAt() para obtener el caracter en el índice i
+        // console.log(saludo.charAt(i));
+    };
+
+</script>

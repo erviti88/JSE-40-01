@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script src="Alumno.class.js"></script>
+<script>
+
+    // Se crea una nueva instancia de la clase Alumno sin proporcionar ningún parámetro al constructor.
+    var alumno1 = new Alumno();
+
+    // Se invoca el método detalle() del objeto alumno1 y se guarda el resultado en la variable texto.
+    var texto = alumno1.detalle();  
+
+    // Se muestra el contenido de la variable texto en el cuerpo del documento HTML.
+    document.body.innerHTML = texto;
+
+    // Se califica al alumno con un 10 usando el método calificar().
+    alumno1.calificar(10);
+
+    // Se invoca de nuevo el método detalle() del objeto alumno1 y se guarda el resultado en la variable texto.
+    texto = alumno1.detalle();
+
+    // Se añade el nuevo contenido de la variable texto al cuerpo del documento HTML.
+    document.body.innerHTML += texto;
+    
+</script>
