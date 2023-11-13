@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validaciones</title>
+</head>
+<body>
+    
+    <!-- Contenedor de mensajes de error -->
+    <div id="errores"><br><br>
+        <div id="errores"><br><br>
+            <!-- Formulario con función de validación en el evento onsubmit -->
+            <form action="#" method="POST" id="miFormulario" onsubmit="return f_validar()">
+                
+                <!-- Campo para la matrícula -->
+                <label for="matricula">Matrícula</label><br>
+                <input type="text" id="matricula" name="matricula" required><br><br>
+    
+                <!-- Campo para el nombre -->
+                <label for="nombre">Nombre</label><br>
+                <input type="text" id="nombre" name="nombre"><br><br>
+    
+                <!-- Campo para el teléfono -->
+                <label for="telefono">Teléfono</label><br>
+                <input type="text" id="telefono" name="telefono"><br><br>
+    
+                <!-- Campo para el correo electrónico -->
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email"><br><br>
+    
+                <!-- Campo para observaciones, usando un textarea -->
+                <label for="observaciones">Observaciones</label><br>
+                <textarea name="observaciones" id="observaciones" value=""></textarea><br><br>
+    
+                <!-- Botón de envío del formulario -->
+                <button>Enviar</button>
+    
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    // Obtener referencias a elementos del DOM
+    var dom_errores = document.getElementById("errores");
+    var dom_matricula = document.getElementById("matricula");
+    var dom_nombre = document.getElementById("nombre");
+    var dom_telefono = document.getElementById("telefono");
+    var dom_email = document.getElementById("email");
+    var dom_observaciones = document.getElementById("observaciones");
+
+    // Función de validación del formulario
+    var f_validar = (p_evento) => {
+        // Obtener los valores de los campos del formulario
+        var matricula = dom_matricula.value;
+        var nombre = dom_nombre.value;
+        var telefono = dom_telefono.value;
+        var email = dom_email.value;
+        var observaciones = dom_observaciones.value;
+
+        var ok = true;
+        var mensajeErrores = "";
+
+        /* https://regex101.com/ */
+        // Expresiones regulares para validar los campos
+        var reg_matricula = /^\d{4}$/;
+        var reg_nombre = /^[a-zA-ZñÑçÇ áéíóúÁÉÍÓÚ]{2,15}$/;
+        /* Prefijo que comienza por + de 2 o 3 números seguido o no de un guion,
+        seguido de un número de teléfono de 9 dígitos que comience por 6, 7, 8 o 9. 
+        El símbolo \ que precede al símbolo +, es para indicar que + no es un cuantificador,
+        tan solo un carácter alfabético como otro cualquiera. */
+        var reg_telefono = /^\+{1}[0-9]{2,3}-{0,1}[6|7|8|9]{1}[0-9]{8}$/; 
+        var reg_email = /^\S{1,}@{1}\S{1,}$/;
+
+        // Validamos
+        // ---------
+
+        // ...campo matricula
+        if (!reg_matricula.test(matricula)) {
+            mensajeErrores += "- Campo MATRÍCULA, formato incorrecto. Debe introducir 4 números.<br>";
+            ok = false;
+        }
+
+        // ...campo nombre
+        if (!reg_nombre.test(nombre)) {
+            mensajeErrores += "- Campo NOMBRE, formato incorrecto. Solo letras y espacios en blanco, entre 2 y 15 caracteres.<br>";
+            ok = false;
+        }
+
+        // ...campo teléfono
+        if (!reg_telefono.test(telefono)) {
+            mensajeErrores += "- Campo TELÉFONO, formato incorrecto. Debe comenzar por + seguido de un prefijo de 2 o 3 dígitos y después un guión opcional seguido de 9 dígitos que corresponden al teléfono siempre que comience por 6, 7 o 8.<br>";
+            ok = false;
+        }
+
+        // ...campo email
+        if (!reg_email.test(email)) {
+            mensajeErrores += "- Campo EMAIL, formato incorrecto. Debe contener el símbolo @.<br>";
+            ok = false;
+        }
+
+        // Mostrar mensajes de error o alerta de éxito
+        if (!ok) {
+            dom_errores.innerHTML = mensajeErrores;
+        }
+        else if (ok) {
+            alert("Formulario enviado");
+        }
+
+        return ok;
+    };
+
+</script>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validaciones</title>
+</head>
+<body>
+    
+    <!-- Contenedor de mensajes de error -->
+    <div id="errores"><br><br>
+        <!-- Formulario con función de validación en el evento onsubmit -->
+        <form action="#" method="POST" id="miFormulario" onsubmit="return f_validar()">
+            
+            <!-- Campo para la matrícula -->
+            <label for="matricula">Matrícula</label><br>
+            <input type="text" id="matricula" name="matricula" required><br><br>
+
+            <!-- Campo para el nombre -->
+            <label for="nombre">Nombre</label><br>
+            <input type="text" id="nombre" name="nombre"><br><br>
+
+            <!-- Campo para el teléfono -->
+            <label for="telefono">Teléfono</label><br>
+            <input type="text" id="telefono" name="telefono"><br><br>
+
+            <!-- Campo para el correo electrónico -->
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email"><br><br>
+
+            <!-- Campo para observaciones, usando un textarea -->
+            <label for="observaciones">Observaciones</label><br>
+            <textarea name="observaciones" id="observaciones"></textarea><br><br>
+
+            <!-- Grupo de checkboxes para las aficiones -->
+            <fieldset>
+
+                <legend>Aficiones</legend>
+                <input type="checkbox" id="aficion_cine" name="aficion_cine" value="1">
+                <label for="aficion_cine">Cine</label>
+                <br>
+
+                <input type="checkbox" id="aficion_musica" name="aficion_musica" value="2">
+                <label for="aficion_musica">Música</label>
+                <br>
+
+                <input type="checkbox" id="aficion_programacion" name="aficion_programacion" value="3">
+                <label for="aficion_programacion">Programación</label>
+                <br>
+
+            </fieldset>
+
+            <br>
+
+            <!-- Grupo de radio buttons para el nivel -->
+            <fieldset>
+
+                <legend>Nivel</legend>
+                <input type="radio" id="nivel_principiante" name="nivel">
+                <label for="nivel_principiante">Principiante</label>
+                <br>
+
+                <input type="radio" id="nivel_avanzado" name="nivel">
+                <label for="nivel_avanzado">Avanzado</label>
+                <br>
+                
+            </fieldset>
+
+            <br>
+
+            <!-- Menú desplegable para seleccionar un curso -->
+            <label for="curso">Cursos</label><br>
+            <select name="curso" id="curso">
+                <option value="">- Seleccione una opción- </option>
+                <option value="IFCD044">Javascript</option>
+                <option value="IFCD099">Java</option>
+            </select>
+            <br><br>
+
+            <!-- Campos para la fecha y hora de inscripción -->
+            <label for="fechaInscripcion">Fecha de inscripción</label><br>
+            <input type="date" id="fechaInscripcion" name="fechaInscripcion">
+            <br><br>
+
+            <label for="horaInscripcion">Hora de inscripción</label><br>
+            <input type="time" id="horaInscripcion" name="horaInscripcion">
+            <br><br>
+
+            <!-- BOTONES DE ENVIO DE DATOS
+            <input type="submit" value="Enviar"> -->
+
+            <button>Enviar</button>
+
+            <!-- BOTÓN QUE NO ENVÍA. 
+            Se puede emplear para asociar algún evento que sea de formulario
+            <input type="button" value="Cambiar Fondo" id="btnCambiarFondo"> -->
+
+            <!-- BOTÓN DE BORRADO
+            Devuelve a las cajas el valor inicial que tenían cuando cargó la página. -->
+            <input type="reset" value="Borrar">
+
+        </form>
+    </div>
+
+</body>
+</html>
