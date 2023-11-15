@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retorno valor</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    var r; // Variable para almacenar el resultado de la suma
+
+    // Función para sumar dos números
+    var f_sumar = function(p_numero1, p_numero2) {
+        // Validación: si alguno de los valores no es un número, se lanza un error
+        if (isNaN(p_numero1)) {
+            throw "El primer valor debe ser numérico";
+        }
+
+        if (isNaN(p_numero2)) {
+            throw "El segundo valor debe ser numérico";
+        }
+
+        // Si ambos valores son números, se realiza la suma
+        var resultado = p_numero1 + p_numero2;
+
+        return resultado; // Se devuelve el resultado de la suma
+    };
+
+    try {
+        // Se intenta sumar dos valores (uno de ellos es una cadena no numérica)
+        r = f_sumar("María", 1);
+        alert(r); // Se muestra el resultado de la suma (en caso de éxito, esto no ocurrirá)
+    } catch (error) {
+        // En caso de error (por valores no numéricos), se captura el error y se muestra en un alert
+        alert(error); // Se muestra el mensaje de error correspondiente
+    }
+
+</script>
